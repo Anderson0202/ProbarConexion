@@ -18,5 +18,6 @@ namespace Presentacion
             "Initial Catalog=bd_telefonos; Integrated Security=True";
             con = new SqlConnection(strConexion);
         }
+
     }
 }
