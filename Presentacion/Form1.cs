@@ -12,14 +12,14 @@ namespace Presentacion
         public Form1()
         {
             InitializeComponent();
-            string strConexion = "Data Source=(Local)\\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True";
+            string strConexion = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\eva_01\source\repos\ProbandoConexion\Presentacion\PruebaConexion.mdf;Integrated Security=True";
             con = new SqlConnection(strConexion);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string strConexion = @"Data Source=(Local)\\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True";
-            con = new SqlConnection(strConexion);
+            //string strConexion = @"Data Source=(Local)\\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True";
+            //con = new SqlConnection(strConexion);
             //ConexionConBD = new SqlConnection(strConexion);
         }
 
@@ -30,8 +30,8 @@ namespace Presentacion
                 // Probar a abrir la conexión
                 con.Open();
                 tbVersion.Text = "Versión del servidor: " + con.ServerVersion;
-                tbEstadoConexion.Text = "La conexion está: \n";
-                tbEstadoConexion.Text +=con.State.ToString();
+                tbEstadoConexion.Text = "La conexion está: ";
+                tbEstadoConexion.Text += con.State.ToString();
                 tbEstadoConexion.Text += "\nSe accede a la base de datos";
             }
             catch (Exception ex)
